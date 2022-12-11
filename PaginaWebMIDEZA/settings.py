@@ -30,7 +30,8 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#1 AGREGADO 'proyectodesarrolladoenlaunidad4-production.up.railway.app'
+ALLOWED_HOSTS = ['proyectodesarrolladoenlaunidad4-production.up.railway.app']
 
 # Application definition
 
@@ -82,6 +83,7 @@ WSGI_APPLICATION = 'PaginaWebMIDEZA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+#1 MODIFICADO PARA LA BD RAILWAY
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
