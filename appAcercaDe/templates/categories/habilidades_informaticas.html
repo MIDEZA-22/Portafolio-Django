@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{name_category}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-acercaDe">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-acercaDe">
+                <h1>
+                    ['UN','POCO','SOBRE','MÍ']
+                </h1>
+            </div> 
+        {% endblock  %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box">
+
+                {% block content %}
+                    
+                    {% for data in data_computers_skill %}
+                                
+                        <article class="computers_skill">
+                            <h2>{{data.0}}</h2>                         
+                            <p class="framework">{{data.1}}</p>
+                            <br/>
+                            <p class="level"><b>NIVEL:</b> {{data.2}}</p>
+                        </article>
+
+                    {% endfor %}
+
+                    <div class="pagination">
+
+                        {% if data_computers_skill.has_previous %} 
+                            <a href="?page=1">&laquo; Primero</a>
+                            <a href="?page={{data_computers_skill.previous_page_number}}">Anterior</a>
+                        {% endif %}
+                    
+                        <span class="actual">
+                            Página {{data_computers_skill.number}} de {{data_computers_skill.paginator.num_pages}}
+                        </span>
+                    
+                        {% if data_computers_skill.has_next %} 
+                            <a href="?page={{data_computers_skill.next_page_number}}">Siguiente</a>
+                            <a href="?page={{data_computers_skill.paginator.num_pages}}">Ultima &raquo;</a> 
+                        {% endif %}
+                        
+                    </div>
+
+                {% endblock %}
+
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

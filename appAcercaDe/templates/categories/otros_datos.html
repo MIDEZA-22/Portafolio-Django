@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{name_category}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-acercaDe">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-acercaDe">
+                <h1>
+                    ['UN','POCO','SOBRE','MÍ']
+                </h1>
+            </div> 
+        {% endblock  %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box">
+
+                {% block content %}
+                    
+                    {% for data in data_other_data %}
+                
+                        <article class="other_data-link">
+
+                            {% if data.image != 'null' and data.image.url|length >= 1 %} 
+                                <div class="photo">
+                                    <img src="{{data.image.url}}" title="{{data.name}}" alt="Foto: {{data.name}}" />
+                                </div>
+                            {% endif %}
+            
+                            <div class="data">
+                                <h2>{{data.name}}</h2>
+                                <br/>
+                                <p><b>DESCRIPCIÓN:</b><p>
+                                <br/>
+                                <p class="description">{{data.description|safe}}</p>
+                            </div>
+            
+                            <div class="clearfix_3"></div>
+            
+                        </article>
+
+                    {% endfor %}
+
+                    <div class="pagination">
+
+                        {% if data_other_data.has_previous %} 
+                            <a href="?page=1">&laquo; Primero</a> 
+                            <a href="?page={{data_other_data.previous_page_number}}">Anterior</a>
+                        {% endif %}
+                    
+                        <span class="actual">
+                            Página {{data_other_data.number}} de {{data_other_data.paginator.num_pages}}
+                        </span>
+                    
+                        {% if data_other_data.has_next %} 
+                            <a href="?page={{data_other_data.next_page_number}}">Siguiente</a>
+                            <a href="?page={{data_other_data.paginator.num_pages}}">Ultima &raquo;</a> 
+                        {% endif %}
+                        
+                    </div>
+
+                {% endblock %}
+
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

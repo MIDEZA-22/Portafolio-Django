@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{name_category}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-acercaDe">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-acercaDe">
+                <h1>
+                    ['UN','POCO','SOBRE','MÍ']
+                </h1>
+            </div> 
+        {% endblock  %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box">
+
+                {% block content %}
+                
+                    {% for data in data_education %}
+                
+                        <article class="education-link">
+
+                            {% if data.image != 'null' and data.image.url|length >= 1 %} 
+                                <div class="photo">
+                                    <img src="{{data.image.url}}" title="{{data.name}}" alt="Foto de la {{data.name}}" />
+                                </div>
+                            {% endif %}
+            
+                            <div class="data">
+                                <h2>{{data.name}}</h2>
+                                <p class="description">{{data.description}}</p>
+                                <br/>
+                                <p class="level"><b>NIVEL:</b> {{data.level}}</p>
+                                <br/>   
+                                <p class="date"><b>F.I:</b> {{data.start_date|date:"SHORT_DATE_FORMAT"}} - <b>F. F:</b> {{data.finish_date|date:"SHORT_DATE_FORMAT"}}</p> 
+                            </div>
+            
+                            <div class="clearfix_1"></div>
+            
+                        </article>
+
+                    {% endfor %}
+
+                    <div class="pagination">
+
+                        {% if data_education.has_previous %} 
+                            <a href="?page=1">&laquo; Primero</a> 
+                            <a href="?page={{data_education.previous_page_number}}">Anterior</a>
+                        {% endif %}
+                    
+                        <span class="actual">
+                            Página {{data_education.number}} de {{data_education.paginator.num_pages}}
+                        </span>
+                    
+                        {% if data_education.has_next %} 
+                            <a href="?page={{data_education.next_page_number}}">Siguiente</a>
+                            <a href="?page={{data_education.paginator.num_pages}}">Ultima &raquo;</a> 
+                        {% endif %}
+                        
+                    </div>
+
+                {% endblock %}
+                
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

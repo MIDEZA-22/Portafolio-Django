@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+        <meta name="author" content="Mijail denis ZAVALA LLANCO | MIDEZA"/>
+        <meta name="email" content="mijail1993.mdzl@gmail.com"/>
+        <meta name="description" content="Página Web Personal de Mijail Denis Zavala Llanco | MIDEZA"/>
+        <meta name="keywords" content="Página Web Personal,Mijail,Denis,Zavala,Llanco,MIDEZA"/>
+        <link rel="icon" type="image/jpg" href="{% static 'images/favicon-MIDEZA.jpg' %}"/>
+        <script src="https://kit.fontawesome.com/ba947d8d2c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+        <title>
+            {% block title %}
+
+            {% endblock %}
+            | MIDEZA
+        </title>
+    </head>
+    <body>
+        {% block header %}
+            
+            {% block portada %}
+                        
+            {% endblock %}
+
+            {% block tituloPortada %}
+
+            {% endblock %}
+
+        {% endblock %}
+
+        <nav id="nav">
+            <ul>
+                {% if user.email %}
+                    <li>
+                        <a href="{% url 'cover_page' %}">PORTADA</a> 
+                    </li>
+                    <li>
+                        <a href="{% url 'acercaDe' %}">ACERCA DE <i class="fa-solid fa-sort-down"></i></a> 
+                        <ul>
+                            {% for category in categories %}
+                                {% if category.0 == 1 %} 
+                                    <li>
+                                        <a href="{% url 'education' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 2 %}
+                                    <li>
+                                        <a href="{% url 'experience' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 3 %}
+                                    <li>
+                                        <a href="{% url 'pre_professional_practice' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 4 %}
+                                    <li>
+                                        <a href="{% url 'volunteering' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 5 %}
+                                    <li>
+                                        <a href="{% url 'computers_skill' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 6 %}
+                                    <li>
+                                        <a href="{% url 'language' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 7 %}
+                                    <li>
+                                        <a href="{% url 'achievement' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 8 %}
+                                    <li>
+                                        <a href="{% url 'course' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 9 %}
+                                    <li>
+                                        <a href="{% url 'congress' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 10 %}
+                                    <li>
+                                        <a href="{% url 'training' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 11 %}
+                                    <li>
+                                        <a href="{% url 'references' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% elif category.0 == 12 %}
+                                    <li>
+                                        <a href="{% url 'other_data' category.1 %}">{{category.1}}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'briefcase' %}">PORTAFOLIO</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">CONTACTO</a>
+                    </li>
+                    <li id="logout"> 
+                        <a href="{% url 'logout' %}">|CERRAR SESIÓN <i class="fa-solid fa-right-from-bracket"></i></a>
+                    </li>
+                {% else %}
+                    <li id="login">
+                        <a id="link-login" href="{% url 'login' %}">|ACCESO <i class="fa-solid fa-user-large"></i></a>
+                    </li>
+                {% endif %}
+            </ul>   
+        </nav>
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+        </div>
+        {% block content-exterior %}
+
+            {% block box-principal %}
+
+                {% block content %}
+                
+                {% endblock %}
+
+            {% endblock %}
+
+        {% endblock %}
+        <footer>
+            Copyright &copy; 2022, Mijail Denis Zavala Llanco - Ingeniero de Sistemas | <a href="#top">Ir arriba</a>
+        </footer>
+        <script type="text/javascript" src="{% static 'js/scroll.js' %}" href)></script>
+    </body>
+</html>

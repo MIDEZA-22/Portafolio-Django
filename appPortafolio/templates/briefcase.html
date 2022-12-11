@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-portafolio">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-portafolio">
+                <h1>
+                    ['MIS','CREACIONES']
+                </h1>
+            </div> 
+        {% endblock  %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box">
+
+                {% block content %}
+                    
+                    {% for data in data_briefcase %}
+                        
+                        <article class="portafolio-1">
+
+                            {% if data.image != 'null' and data.image.url|length >= 1 %} 
+                                <div class="photo">
+                                    <img src="{{data.image.url}}" title="{{data.name}}" alt="Foto: {{data.name}}"/>
+                                </div>
+                            {% endif %}
+            
+                            <div class="data">
+                                <h2>{{data.name}}</h2>
+                                <br/>
+                                <p><b>DESCRIPCIÓN:</b><p>
+                                <br/>
+                                <p class="description">{{data.description|safe}}</p>
+                            </div>
+                            
+                            <div class="clearfix_4"></div>
+
+                        </article>
+                        
+                        <article class="portafolio-2">
+                            
+                            <a href="{{data.repository_address}}" target="_blank" title="Github"><i class="fa-brands fa-github-square"></i></a>
+                            
+                        </article>
+                        
+                    {% endfor %}
+
+                    <div class="pagination">
+
+                        {% if data_briefcase.has_previous %} 
+                            <a href="?page=1">&laquo; Primero</a> 
+                            <a href="?page={{data_briefcase.previous_page_number}}">Anterior</a>
+                        {% endif %}
+                    
+                        <span class="actual">
+                            Página {{data_briefcase.number}} de {{data_briefcase.paginator.num_pages}}
+                        </span>
+                    
+                        {% if data_briefcase.has_next %} 
+                            <a href="?page={{data_briefcase.next_page_number}}">Siguiente</a>
+                            <a href="?page={{data_briefcase.paginator.num_pages}}">Ultima &raquo;</a> 
+                        {% endif %}
+                        
+                    </div>
+
+                {% endblock %}
+                
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

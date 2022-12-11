@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-contacto">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-contacto">
+                <h1>
+                    ['COMUNÍCATE','CONMIGO']
+                </h1>
+            </div> 
+        {% endblock  %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box">
+
+                {% block content %}
+
+                    <div class="contacto-icono-mensaje">
+
+                        <img src="{% static 'images/mensaje.png' %}" alt="Icono de un mensaje"/>
+                        
+                    </div>
+
+                    <form class="contacto-formulario" action="{% url 'send_mail' %}" method="POST">
+                        
+                        {% csrf_token %}
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="contacto-message">
+                                    {{message}}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        
+                        <br/>
+                        <br/>
+                        <br/>
+                        
+                        <input type="text" name="name" required maxlength="50" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" placeholder="(*) Apellidos y Nombre(s)"/>
+                        
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <input type="email" name="email" required maxlength="64" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="(*) Correo Electrónico"/> 
+                        
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <input type="text" name="subject" required maxlength="80" placeholder="(*) Asunto"/>
+
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <textarea type="text" name="message" required maxlength="800" wrap="soft" placeholder="(*) Mensaje"/></textarea>
+                
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <input type="submit" value="Enviar"/>
+                
+                    </form>
+
+                {% endblock %}
+                
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

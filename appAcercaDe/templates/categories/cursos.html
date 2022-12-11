@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{name_category}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-acercaDe">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-acercaDe">
+                <h1>
+                    ['UN','POCO','SOBRE','MÍ']
+                </h1>
+            </div> 
+        {% endblock  %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box">
+
+                {% block content %}
+                    
+                    {% for data in data_course %}
+                                
+                        <article class="course-link">
+                            <h2>{{data.0}}</h2>
+                            <p class="date">{{data.2|date:"SHORT_DATE_FORMAT"}} - {{data.3|date:"SHORT_DATE_FORMAT"}}</p>                         
+                            <p class="entity">{{data.1}}</p>
+                            <br/>
+                            <p class="duration"><b>DURACIÓN:</b> {{data.4}}</p>
+                        </article>
+
+                    {% endfor %}
+
+                    <div class="pagination">
+
+                        {% if data_course.has_previous %} 
+                            <a href="?page=1">&laquo; Primero</a> 
+                            <a href="?page={{data_course.previous_page_number}}">Anterior</a>
+                        {% endif %}
+                    
+                        <span class="actual">
+                            Página {{data_course.number}} de {{data_course.paginator.num_pages}}
+                        </span>
+                    
+                        {% if data_course.has_next %} 
+                            <a href="?page={{data_course.next_page_number}}">Siguiente</a>
+                            <a href="?page={{data_course.paginator.num_pages}}">Ultima &raquo;</a> 
+                        {% endif %}
+                        
+                    </div>
+
+                {% endblock %}
+
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

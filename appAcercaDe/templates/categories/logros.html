@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{name_category}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-acercaDe">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-acercaDe">
+                <h1>
+                    ['UN','POCO','SOBRE','MÍ']
+                </h1>
+            </div> 
+        {% endblock  %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box">
+
+                {% block content %}
+                    
+                    {% for data in data_achievement %}
+                    
+                        <article class="achievement-link">
+
+                            {% if data.image != 'null' and data.image.url|length >= 1 %} 
+                                <div class="photo">
+                                    <img src="{{data.image.url}}" title="{{data.name}}" alt="Foto: {{data.name}}" />
+                                </div>
+                            {% endif %}
+            
+                            <div class="data">
+                                <h2>{{data.name}}</h2>
+                                <br/>
+                                <p><b>LOGRO:</b></p>
+                                <br/>
+                                <p class="description">{{data.description}}</p>
+                            </div>
+            
+                            <div class="clearfix_2"></div>
+            
+                        </article>
+
+                    {% endfor %}
+
+                    <div class="pagination">
+
+                        {% if data_achievement.has_previous %} 
+                            <a href="?page=1">&laquo; Primero</a> 
+                            <a href="?page={{data_achievement.previous_page_number}}">Anterior</a>
+                        {% endif %}
+                    
+                        <span class="actual">
+                            Página {{data_achievement.number}} de {{data_achievement.paginator.num_pages}}
+                        </span>
+                    
+                        {% if data_achievement.has_next %} 
+                            <a href="?page={{data_achievement.next_page_number}}">Siguiente</a>
+                            <a href="?page={{data_achievement.paginator.num_pages}}">Ultima &raquo;</a> 
+                        {% endif %}
+                        
+                    </div>
+
+                {% endblock %}
+                
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

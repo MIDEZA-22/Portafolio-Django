@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block header %}
+    <header class="header-portada">
+        {% block portada %}
+            <img src="{% static 'images/portada-mideza_1200px-350px.jpg' %}" alt="Portada de Mijail Denis Zavala Llanco"/>
+        {% endblock %}
+
+        {% block tituloPortada %}
+            <div class="div-portada">
+                <h1>
+                    ['BIENVENIDOS']
+                </h1>
+            </div> 
+        {% endblock %}
+    </header>
+{% endblock %}
+
+{% block content-exterior %}
+    <div id="content">
+        {% block box-principal %}
+            <div class="box-portada">
+
+                {% block content %}
+
+                    <div class="portada">
+
+                        <h2>
+                            ESTIMADOS, LE SALUDA <span>MIJAIL</span>
+                        </h2>
+
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+                        </p>
+
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-square"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram-square"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com" target="_blank" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                        
+                        <div>
+                            <a href="{% static 'documents/cv-mideza.pdf' %}" target="_blank">Descargar CV</a>
+                        </div>
+
+                    </div>
+
+                    <div class="foto-marco">
+
+                        <img src="{% static 'images/mideza.png' %}" alt="Foto de {{name}}" title="{{name}}"/>
+                    
+                    </div>
+                
+                {% endblock %}
+
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+
+
