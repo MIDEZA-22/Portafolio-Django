@@ -88,6 +88,8 @@ DATABASES = {
         'NAME': env('DATABASE_NAME'),
         'USER': env('DATABASE_USER'),
         'PASSWORD': env('DATABASE_PASS'),
+        'HOST': 'containers-us-west-165.railway.app',
+        'PORT': '7804',
     }
 }
 
