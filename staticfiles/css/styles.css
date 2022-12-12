@@ -1,0 +1,1021 @@
+/*Estilos generales*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none; /*az Quitar el subrayado propios de los enlaces*/
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+/*Estilo de la cabecera - PORTADA */
+
+.header-portada{
+    width: 1200px;
+    height: 350px;
+    /*r Posicionamiento - Contenedor padre*/
+    margin: auto; /*az Centrar la caja header (solo funciona para etiquetas de bloque)*/
+    position: relative; /*az Se esta tomando como referencia al header, para el posterior posicionamiento del div(rectangulo anaranjado)*/
+}
+
+.header-portada .div-portada{
+    width: 1080px;
+    height: 164px;
+    border: #e3600e 10px solid;
+    /*r Posicionamiento - Contenedor hijo*/
+    position: absolute; /*az Se posicionara con respecto al contenedor padre(porque se tomo como referencia)*/
+    top: 84px;
+    left: 50px;
+}
+
+.header-portada .div-portada h1{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    margin-top: 46px;
+}
+
+.header-portada .acceso h1{
+    width: 21ch; /*az Número de caracteres que tiene nuestra frase dentro del h1*/
+    overflow: hidden;
+    color: rgb(235, 221, 221);
+    font-size: 60px;
+    margin-top: 46px;
+    margin-left: 162px;
+    border-right: 4px solid;
+    /*r Animaciones*/
+    animation: typing 2s steps(21), blink .5s infinite step-end alternate;
+}
+
+@keyframes typing{
+    from{ /*az TIENE QUE IR DESDE UN ANCHO DE 0PX*/
+        width: 0;
+    }
+}
+
+@keyframes blink{
+    50%{  /*az CUANDO LA ANIMACION ESTA EN LA MITAD (50%), APLICARA LO SIGUIENTE:*/
+        border-color: transparent;
+    }
+}
+
+/*Estilo de la cabecera - ACERCA DE */
+
+.header-acercaDe{
+    width: 1200px;
+    height: 350px;
+    /*r Posicionamiento - Contenedor padre*/
+    margin: auto; /*az Centrar la caja header (solo funciona para etiquetas de bloque)*/
+    position: relative; /*az Se esta tomando como referencia al header, para el posterior posicionamiento del div(rectangulo anaranjado)*/
+}
+
+.header-acercaDe .div-acercaDe{
+    width: 1200px;
+    height: 350px;
+    /*Gradientes*/
+    background: #e65c00;
+    background: -webkit-linear-gradient(to right, hsla(50, 95%, 56%, 0.500), hsla(24, 100%, 45%, 0.500));
+    background: linear-gradient(to right, hsla(50, 95%, 56%, 0.500), hsla(24, 100%, 45%, 0.500));     
+    /*r Posicionamiento - Contenedor hijo*/
+    position: absolute; /*az Se posicionara con respecto al contenedor padre(porque se tomo como referencia)*/
+    top: 0px;
+    left: 0px;
+}
+
+.header-acercaDe .div-acercaDe h1{
+    color: #121011;
+    text-align: center;
+    font-size: 60px;
+    line-height: 350px; /*az Método para alinear verticalmente usando el "line-height", solo en la etiqueta h1. Tomando como referencia la altura de su contenedor (header div)*/
+}
+
+/*Estilo de la cabecera - PORTAFOLIO */
+
+.header-portafolio{
+    width: 1200px;
+    height: 350px;
+    /*r Posicionamiento - Contenedor padre*/
+    margin: auto; /*az Centrar la caja header (solo funciona para etiquetas de bloque)*/
+    position: relative; /*az Se esta tomando como referencia al header, para el posterior posicionamiento del div(rectangulo anaranjado)*/
+}
+
+.header-portafolio .div-portafolio{
+    width: 1200px;
+    height: 350px;
+    /*Gradientes*/
+    background: #ff4b1f;
+    background: -webkit-linear-gradient(to right, hsla(16, 100%, 70%, 0.500), hsla(12, 100%, 56%, 0.500)); 
+    background: linear-gradient(to right, hsla(16, 100%, 70%, 0.500), hsla(12, 100%, 56%, 0.500)); 
+    /*r Posicionamiento - Contenedor hijo*/
+    position: absolute; /*az Se posicionara con respecto al contenedor padre(porque se tomo como referencia)*/
+    top: 0px;
+    left: 0px;
+}
+
+.header-portafolio .div-portafolio h1{
+    color: #121011;
+    text-align: center;
+    font-size: 60px;
+    line-height: 350px; /*az Método para alinear verticalmente usando el "line-height", solo en la etiqueta h1. Tomando como referencia la altura de su contenedor (header div)*/
+}
+
+/*Estilo de la cabecera - CONTACTO */
+
+.header-contacto{
+    width: 1200px;
+    height: 350px;
+    /*r Posicionamiento - Contenedor padre*/
+    margin: auto; /*az Centrar la caja header (solo funciona para etiquetas de bloque)*/
+    position: relative; /*az Se esta tomando como referencia al header, para el posterior posicionamiento del div(rectangulo anaranjado)*/
+}
+
+.header-contacto .div-contacto{
+    width: 1200px;
+    height: 350px;
+    /*Gradientes*/
+    background: #FF4E50;  
+    background: -webkit-linear-gradient(to right, hsla(50, 95%, 56%, 0.500), hsla(359, 100%, 65%, 0.500));  
+    background: linear-gradient(to right, hsla(50, 95%, 56%, 0.500), hsla(359, 100%, 65%, 0.500)); 
+    /*r Posicionamiento - Contenedor hijo*/
+    position: absolute; /*az Se posicionara con respecto al contenedor padre(porque se tomo como referencia)*/
+    top: 0px;
+    left: 0px;
+}
+
+.header-contacto .div-contacto h1{
+    color: #121011;
+    text-align: center;
+    font-size: 60px;
+    line-height: 350px; /*az Método para alinear verticalmente usando el "line-height", solo en la etiqueta h1. Tomando como referencia la altura de su contenedor (header div)*/
+}
+
+/*Estilo de la barra de navegación*/
+
+nav{
+    width: 1250px;
+    height: 40px;
+    margin: auto;
+    background-color: #121011;
+    border: 1px solid #333333;
+    box-shadow: 0px 20px 20px #2e2624; /*az Sombra de la barra de navegación*/
+    font-size: 17px;
+}
+
+nav > ul{
+    list-style: none; /*az Quitar el punto, numeración - viñetas*/
+}
+
+nav > ul > li{
+    line-height: 40px;
+    float: left;
+}
+
+nav > ul > li > a{
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    /*r Transición del elemento "nav > ul > li > a:hover"*/
+    transition: all .4s; /*az Transición para suavizar el movimiento*/
+}
+
+nav > ul > li > a:hover{ 
+    background-color: white;
+    box-shadow: 0px 0px 5px #2e2624 inset; /*az Sombra interior de la etiqueta "a"*/
+    color: black;
+}
+
+/*Estilo de la lista desplegable de la pestaña ACERCA DE*/
+
+nav > ul > li > ul{
+    display: none; /*az Ocultar la lista desplegable en primera instancia*/
+    width: 246px;
+    text-align: left;
+    position: absolute; /*az Para que pueda sobresalir o estar por ensima de cualquier elemento*/
+    z-index: 1000; /*az Posicionamiento con respecto a capas. El 1000 significa la última capa, por lo tanto será el primero SIEMPRE*/
+    list-style: none; /*az Quitar las viñetas propias de las etiquetas ul y ol*/
+}
+
+nav > ul > li:hover > ul{
+    display: block; /*az Cuando se hague ":hover" sobre los elementos de la lista principal "li", reaparecer la lista desplegable*/
+}
+
+nav > ul > li:hover > ul > li{
+    background: #64312b;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 5px;
+    padding-left: 14px;
+    line-height: 28px;
+    font-size: 15px;
+    transition: all .4s; /*az Aplicar una transición directamente al "li"*/
+}
+
+nav > ul > li:hover > ul > li:hover{
+    background-color: #655244;
+}
+
+nav > ul > li:hover > ul > li > a{
+    display: block;
+    color: white;
+    transition: all .4s; /*az Aplicar una transición directamente al "a"*/
+}
+
+/*Efecto 3D del contenedor de los enlaces*/
+
+.barra{
+    width: 1250px;
+    margin: auto;
+}
+
+.esquina-izquierda{
+    display: block; /*az Manipular la caja*/
+    border-left: 20px solid transparent;
+    border-top: 10px solid #2e2624;
+    float: left;
+}
+
+.esquina-derecha{
+    display: block; /*az Manipular la caja*/
+    border-right: 20px solid transparent;
+    border-top: 10px solid #2e2624;
+    float: right;
+}
+
+.relleno-barra{
+    display: block; /*az Manipular la caja*/
+    width: 1210px;
+    background: #2e2624;
+    height: 10px;
+    float: left;
+}
+
+/*Estilos para el contenido de las pestañas: PORTADA, ACERCA DE, PORTAFOLIO y CONTACTO*/
+
+#content{ 
+    width: 1200px;
+    min-height: 630px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 40px;  
+}
+
+.box{
+    background: white;
+    width: 96.5%;
+    min-height: 630px;
+    padding: 15px;
+    padding-top: 0;
+    border: 1px solid #ddd;
+    margin: auto;
+    box-shadow: 0px 0px 1px #2e2624 inset; /*az Sombra interior(inset) de la class box*/
+}
+
+.box-portada{ /*Estilos solo para la caja de la pestaña PORTADA*/
+    background: #2e2624;
+    width: 96.5%;
+    min-height: 630px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: auto;
+    box-shadow: 0px 0px 1px #2e2624 inset; /*az Sombra interior(inset) de la class box*/
+    position: relative;
+}
+
+/*Estilo del pie de pagina*/
+
+footer{
+    width: 1250px;
+    height: 40px;
+    background-color: #121011;
+    border: 1px solid #333333;
+    color: white;
+    text-align: center;
+    margin: auto;
+    box-shadow: 0px 20px 20px #2e2624; /*az Sombra del pie de pagina*/
+    line-height: 40px; /*az Método para alinear verticalmente usando el "line-height". Tomando como referencia la altura de su contenedor (footer)*/
+    font-size: 17px;
+    }
+
+footer a{
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    /*r Transición del elemento "footer a:hover"*/
+    transition: transform .4s;
+}
+
+footer a:hover{
+    color: #e3600e;
+    transform: scale(1.1);
+}
+
+/*Estilo de la pestaña PORTADA*/
+
+.portada{
+    width: 550px;
+    height: 517px;
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    overflow: hidden;
+}
+
+.portada h2{
+    margin-top: 29px;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 33px;
+    text-align: center;
+}
+
+.portada h2 span{
+    color: #e3600e;
+    font-size: 37px; 
+}
+
+.portada p{
+    color: white;
+    font-size: 17px; 
+    text-align: justify;
+    /*r Evitar el desvordamiento de texto dentro del parrado(La medida del ancho referencial, es el ancho de ".box-principal .texto-portada")*/
+    width: 550px; 
+    word-wrap: break-word;   
+}
+
+.portada ul{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.portada ul li{
+    display: inline-block;
+  }
+
+.portada ul li a i{
+    display: block; /*az Convertir la etiquera "a" en un elemento en bloque. Para que los cambios haguen efecto*/
+    color: #e3600e;
+    font-size: 40px;
+    padding: 0px 5px;
+    /*r Transición del elemento ".box-principal .contenido-marco ul li a:hover"*/
+    transition:color .4s ease-in-out; /*az "ease-in-out" significa que comenzará lentamente, será más rápido en la mitad de la animación y luego terminará lentamente*/
+}
+
+.portada ul li a i:hover{
+    color: white;
+}
+
+.portada div a{
+    display: block;
+    color: #121011;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    border-radius: 30px;
+    margin-top: 108px;
+    letter-spacing: 2px;
+    /*r Transición del elemento ".box-principal .contenido-marco ul li a:hover"*/
+    transition: background-color .4s, transform .4s ease-in-out; /*az "ease-in-out" significa que comenzará lentamente, será más rápido en la mitad de la animación y luego terminará lentamente*/
+}
+
+.portada div a:hover{
+    background-color: #e3600e;
+    color: white;
+    transform: scale(1.1); /*az Agrandar el icono proporcionalmente (ancho-altura)*/
+}
+
+.foto-marco{
+    width: 400px;
+    height: 500px;
+    border: 10px solid #121011;
+    position: absolute;
+    top: 75px;
+    right: 75px;
+    overflow: hidden;
+    background: #000000;  
+    background: -webkit-linear-gradient(to right, hsla(6, 78%, 57%, 0.300), hsla(0, 0%, 0%, 0.300));  
+    background: linear-gradient(to right, hsla(6, 78%, 57%, 0.300), hsla(0, 0%, 0%, 0.300)); 
+}
+
+.foto-marco img{
+    width: 400px;
+    height: 500px;
+}
+
+/*Estilo de la pestaña ACERCA DE*/
+
+.acercaDe{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 30px;
+}
+
+.acercaDe h2{
+    text-align: center;
+    color: #333;
+}
+
+.acercaDe ul{
+    text-align: justify;
+    padding-left: 30px;
+    color: #333;
+}
+.acercaDe p{
+    text-align: justify;
+    color: #333;
+}
+
+/*Estilos del enlace EDUCACIÓN de la pestaña ACERCA DE*/
+
+.education-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.education-link .photo{
+    width: 300px;
+    height: 200px;
+    float: left;
+    overflow: hidden; /*az Ocultar todo lo que sobresalga del div(.photo)*/
+}
+
+.education-link .photo img{
+    width: 300px;
+    height: 200px;
+}
+
+.education-link .data{
+    width: 798px;
+    height: 200px;
+    float: left;
+    margin-left: 30px;
+    overflow: auto; /*az Generar una barra de scroll, solo cuando sea necesario*/
+}
+
+.education-link .data h2,
+.education-link .data .level,
+.education-link .data .date{
+    color: #333;
+}
+
+.education-link .data .description{
+    color: grey;
+}
+
+.clearfix_1{
+    float: none;
+    clear: both;
+}
+
+/*Estilos del enlace EXPERIENCIAS LABORALES de la pestaña ACERCA DE*/
+
+.experience-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.experience-link h2{
+    display: inline;
+    color: #333;
+}
+
+.experience-link .date{
+    float: right;
+    color: #333;
+}
+
+.experience-link .held_position{
+    color: grey;
+}
+
+.experience-link b,
+.experience-link .functions{
+    color: #333;
+}
+
+/*Estilos del enlace PRÁCTICA PRE PROFESIONAL de la pestaña ACERCA DE*/
+
+.pre_professional_practice-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.pre_professional_practice-link h2{
+    display: inline;
+    color: #333;
+}
+
+.pre_professional_practice-link .date{
+    float: right;
+    color: #333;
+}
+
+.pre_professional_practice-link .held_position{
+    color: grey;
+}
+
+.pre_professional_practice-link b,
+.pre_professional_practice-link .functions{
+    color: #333;
+}
+
+/*Estilos del enlace VOLUNTARIADOS de la pestaña ACERCA DE*/
+
+.volunteering-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.volunteering-link h2{
+    display: inline;
+    color: #333;
+}
+
+.volunteering-link .date{
+    float: right;
+    color: #333;
+}
+
+.volunteering-link .held_position{
+    color: grey;
+}
+
+.volunteering-link b,
+.volunteering-link .functions{
+    color: #333;
+}
+
+/*Estilos del enlace HABILIDADES INFORMÁTICAS de la pestaña ACERCA DE*/
+
+.computers_skill{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.computers_skill h2,
+.computers_skill .level{
+    color: #333;
+}
+
+.computers_skill .framework{
+    color: grey;
+}
+
+/*Estilos del enlace IDIOMAS de la pestaña ACERCA DE*/
+
+.language{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.language h2,
+.language .level{
+    color: #333;
+}
+
+.language .name{
+    color: grey;
+}
+
+/*Estilos del enlace LOGROS de la pestaña ACERCA DE*/
+
+.achievement-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.achievement-link .photo{
+    width: 300px;
+    height: 200px;
+    float: left;
+    overflow: hidden; /*az Ocultar todo lo que sobresalga del div(.photo)*/
+}
+
+.achievement-link .photo img{
+    width: 300px;
+    height: 200px;
+}
+
+.achievement-link .data{
+    width: 798px;
+    height: 200px;
+    float: left;
+    margin-left: 30px;
+    overflow: auto; /*az Generar una barra de scroll, solo cuando sea necesario*/
+}
+
+.achievement-link .data h2,
+.achievement-link .data b,
+.achievement-link .data .description{
+    color: #333;
+}
+
+.clearfix_2{
+    float: none;
+    clear: both;
+}
+
+/*Estilos del enlace CURSOS de la pestaña ACERCA DE*/
+
+.course-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.course-link h2{
+    display: inline;
+    color: #333;
+}
+
+.course-link .date{
+    float: right;
+    color: #333;
+}
+
+.course-link .entity{
+    color: grey;
+}
+
+.course-link .duration{
+    color: #333;
+}
+
+/*Estilos del enlace CONGRESOS de la pestaña ACERCA DE*/
+
+.congress-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.congress-link h2{
+    display: inline;
+    color: #333;
+}
+
+.congress-link .date{
+    float: right;
+    color: #333;
+}
+
+.congress-link .entity{
+    color: grey;
+}
+
+.congress-link .duration{
+    color: #333;
+}
+
+/*Estilos del enlace CAPACITACIONES de la pestaña ACERCA DE*/
+
+.training-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.training-link h2{
+    display: inline;
+    color: #333;
+}
+
+.training-link .date{
+    float: right;
+    color: #333;
+}
+
+.training-link .entity{
+    color: grey;
+}
+
+.training-link .duration{
+    color: #333;
+}
+
+/*Estilos del enlace REFERENCIAS de la pestaña ACERCA DE*/
+
+.references-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.references-link h2,
+.references-link .functions,
+.references-link .name,
+.references-link .phone{
+    color: #333;
+}
+
+.references-link .held_position{
+    color: grey;
+}
+
+/*Estilos del enlace OTROS DATOS de la pestaña ACERCA DE*/
+
+.other_data-link{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.other_data-link .photo{
+    width: 300px;
+    height: 200px;
+    float: left;
+    overflow: hidden; /*az Ocultar todo lo que sobresalga del div(.photo)*/
+}
+
+.other_data-link .photo img{
+    width: 300px;
+    height: 200px;
+}
+
+.other_data-link .data{
+    width: 796px;
+    height: 200px;
+    float: left;
+    margin-left: 30px;
+    overflow: auto; /*az Generar una barra de scroll, solo cuando sea necesario*/
+}
+
+.other_data-link .data h2,
+.other_data-link .data b,
+.other_data-link .data .description{
+    color: #333;
+}
+
+.clearfix_3{
+    float: none;
+    clear: both;
+}
+
+/*Estilo de la pestaña PORTAFOLIO*/
+
+.portafolio-1{
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+
+.portafolio-2{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.portafolio-1 .photo{
+    width: 300px;
+    height: 200px;
+    float: left;
+    overflow: hidden; /*az Ocultar todo lo que sobresalga del div(.photo)*/
+}
+
+.portafolio-1 .photo img{
+    width: 300px;
+    height: 200px;
+}
+
+.portafolio-1 .data{
+    width: 798px;
+    height: 200px;
+    float: left;
+    margin-left: 30px;
+    overflow: auto; /*az Generar una barra de scroll, solo cuando sea necesario*/
+}
+
+.portafolio-1 .data h2,
+.portafolio-1 .data b,
+.portafolio-1 .data .description{
+    color: #333;
+}
+
+.portafolio-2 a i{
+    color: #973b24;
+    font-size: 40px;
+    /*r Transición del elemento ".box-principal .contenido-marco ul li a:hover"*/
+    transition:color .4s ease-in-out; /*az "ease-in-out" significa que comenzará lentamente, será más rápido en la mitad de la animación y luego terminará lentamente*/
+}
+
+.portafolio-2 a i:hover{
+    color: #121011;
+}
+
+.clearfix_4{
+    float: none;
+    clear: both;
+}
+
+/*Paginación de la lista desplegable de la pestaña ACERCA DE*/
+
+.pagination{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 17px;    
+}
+
+.pagination a{
+    color: #973b24;
+}
+
+.pagination .actual{
+    color: #121011;
+    font-weight: bolder;
+}
+
+/*Estilo de la pestaña CONTACTO*/
+
+.contacto-icono-mensaje{
+    display: inline-block;
+    overflow: hidden;
+    width: 595px;
+    height: 585px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.contacto-icono-mensaje img{
+    width: 595px;
+    height: 585px;
+}
+
+.contacto-formulario{
+    float: right;
+    width: 500px;
+    height: 585px;
+    margin-top: 30px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.contacto-formulario input{
+    width: 485px;
+    height: 30px;
+    font-size: 17px;
+    padding: 5px;
+    border: 2px solid #e3600e;
+    text-align: center;
+}
+
+.contacto-formulario input:focus{ /*az Cuando se hague click en el input, los estilos cambiaran*/
+    border: 4px solid #e3600e;
+}
+
+.contacto-formulario textarea{
+    width: 485px;
+    height: 120px;
+    font-size: 17px;
+    padding: 5px;
+    border: 2px solid #e3600e;
+    text-align: center;
+}
+
+.contacto-formulario textarea:focus{ /*az Cuando se hague click en el input, los estilos cambiaran*/
+    border: 4px solid #e3600e;
+}
+
+.contacto-formulario [type="submit"]{
+    width: 120px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+    /*r Transición del elemento ".box-principal .contenido-marco ul li a:hover"*/
+    transition: all .4s ease-in-out; /*az "ease-in-out" significa que comenzará lentamente, será más rápido en la mitad de la animación y luego terminará lentamente*/
+}
+
+.contacto-formulario [type="submit"]:hover{
+    border: 2px solid #e3600e;
+    background-color: #e3600e;
+    color: white;
+    transform: scale(1.1); /*az Agrandar el icono proporcionalmente (ancho-altura)*/
+}
+
+.contacto-formulario .contacto-message{
+    padding: 5px;
+    font-size: 20px;
+    background: #e3600e;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/*Estilo de la pestaña ACCESO*/
+
+.acceder-icono-login{
+    display: inline-block;
+    overflow: hidden;
+    width: 595px;
+    height: 600px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.acceder-icono-login img{
+    width: 595px;
+    height: 600px;
+}
+
+.acceder-formulario{
+    float: right;
+    width: 500px;
+    height: 410px;
+    margin-top: 15px;
+    margin-right: 15px;
+    padding-top: 190px;
+    text-align: center;
+    color: white;
+}
+
+.acceder-formulario input{
+    width: 485px;
+    height: 30px;
+    font-size: 17px;
+    padding: 5px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.acceder-formulario input:focus{ /*az Cuando se hague click en el input, los estilos cambiaran*/
+    border: 4px solid #e3600e;
+}
+
+.acceder-formulario [type="submit"]{
+    width: 135px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+    /*r Transición del elemento ".box-principal .contenido-marco ul li a:hover"*/
+    transition: all .4s ease-in-out; /*az "ease-in-out" significa que comenzará lentamente, será más rápido en la mitad de la animación y luego terminará lentamente*/
+}
+
+.acceder-formulario [type="submit"]:hover{
+    border: 2px solid #e3600e;
+    background-color: #e3600e;
+    color: white;
+    transform: scale(1.1); /*az Agrandar el icono proporcionalmente (ancho-altura)*/
+}
+
+.acceder-message{
+    padding: 5px;
+    font-size: 20px;
+    background: #e3600e;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/*Estilos SOLO para los enlaces CERRAR SESIÓN y ACCESO*/
+
+#logout{
+    font-weight: bolder;
+    float: right;
+    letter-spacing: 2px;
+}
+
+#login{
+    font-weight: bolder;
+    letter-spacing: 2px;
+}

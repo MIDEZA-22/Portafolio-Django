@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#1 AGREGADO 'proyectodesarrolladoenlaunidad4-production.up.railway.app'
+#1 ALLOWED_HOSTS = [] -> ['127.0.0.1', 'proyectodesarrolladoenlaunidad4-production.up.railway.app']
 ALLOWED_HOSTS = ['127.0.0.1', 'proyectodesarrolladoenlaunidad4-production.up.railway.app']
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #1 Agregado
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,10 +130,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+#1 ---------------------------------------------------
+#1 ----- Registro del archivo 'static' y 'media' -----
+#1 ---------------------------------------------------
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DISABLE_COLLECTSTATIC = 0 # 0 = Habilitado(Recopilación de archivos estáticos durante la implementación)
+#1 ---------------------------------------------------
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -146,9 +155,15 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+#1 ---------------------------------------------------
+#1 ----------------------- GMAIL ---------------------
+#1 ---------------------------------------------------
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587 
 EMAIL_HOST_USER = 'mideza1993@gmail.com'
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True 
+#1 ---------------------------------------------------
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #1 Para que los archivos se almacenen en caché para siempre y soporte de compresión
