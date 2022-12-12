@@ -31,7 +31,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 #1 AGREGADO 'proyectodesarrolladoenlaunidad4-production.up.railway.app'
-ALLOWED_HOSTS = ['proyectodesarrolladoenlaunidad4-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'proyectodesarrolladoenlaunidad4-production.up.railway.app']
 
 # Application definition
 
