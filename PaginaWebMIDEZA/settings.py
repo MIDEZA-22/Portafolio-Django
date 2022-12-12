@@ -167,3 +167,9 @@ EMAIL_USE_TLS = True
 #1 ---------------------------------------------------
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #1 Para que los archivos se almacenen en caché para siempre y soporte de compresión
+
+#1 ---------------------------------------------------
+#1 ------------------ RENDERIZADOR -------------------
+#1 ---------------------------------------------------
+FORM_RENDERER = 'django.forms.renderers.DjangoTemplates'
+#1 ---------------------------------------------------
